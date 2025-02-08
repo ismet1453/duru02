@@ -14,8 +14,10 @@
             font-family: 'Roboto', sans-serif;
             text-align: center;
             margin: 0;
-            overflow: hidden;
+            padding: 0;
+            overflow-y: auto;
             position: relative;
+            min-height: 100vh;
         }
 
         /* Shooting Stars Effect */
@@ -53,7 +55,7 @@
             position: relative;
             z-index: 2;
             max-width: 700px;
-            margin: 100px auto;
+            margin: 50px auto;
             padding: 20px;
             background: rgba(20, 10, 40, 0.8);
             border-radius: 10px;
@@ -61,31 +63,12 @@
             text-align: center;
         }
 
-        /* Bloody Text Effect */
+        /* Premium Subscription Title */
         .premium-title {
             font-family: 'UnifrakturMaguntia', cursive;
             font-size: 42px;
             color: #ff0033;
-            text-shadow: 0 0 10px rgba(255, 0, 50, 0.9);
-            position: relative;
-            display: inline-block;
-        }
-
-        .premium-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            width: 8px;
-            height: 25px;
-            background: #ff0033;
-            border-radius: 50%;
-            animation: bloodDrip 1.5s infinite alternate;
-        }
-
-        @keyframes bloodDrip {
-            from { opacity: 1; }
-            to { opacity: 0; transform: translateY(10px); }
+            text-shadow: 0 0 15px rgba(255, 0, 50, 0.8);
         }
 
         /* Premium Subscription Button */
@@ -111,10 +94,14 @@
             to { box-shadow: 0 0 30px rgba(138, 43, 226, 1); }
         }
 
-        /* Button Click Effect */
         .premium-button:active {
-            transform: scale(0.95);
-            box-shadow: 0 0 40px rgba(255, 0, 50, 0.9);
+            animation: clickEffect 0.3s ease-in-out;
+        }
+
+        @keyframes clickEffect {
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(138, 43, 226, 1); }
+            50% { transform: scale(0.95); box-shadow: 0 0 15px rgba(138, 43, 226, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 30px rgba(138, 43, 226, 1); }
         }
     </style>
 </head>
