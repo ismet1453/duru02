@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02ReadNovel Premium Subscription</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Roboto:wght@300;400;700&display=swap');
+
+        /* General Page Styles */
+        body {
+            background-color: #0d021f;
+            color: #e0b0ff;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Shooting Stars Effect */
+        .shooting-stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(200, 100, 255, 0.8);
+            border-radius: 50%;
+            opacity: 0;
+            animation: shootStar linear infinite;
+        }
+
+        @keyframes shootStar {
+            from {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            to {
+                transform: translate(80vw, 80vh);
+                opacity: 0;
+            }
+        }
+
+        /* Premium Content Box */
+        .premium-container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 100px auto;
+            padding: 20px;
+            background: rgba(20, 10, 40, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            text-align: center;
+        }
+
+        /* Bloody Text Effect */
+        .premium-title {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 42px;
+            color: #ff0033;
+            text-shadow: 0 0 10px rgba(255, 0, 50, 0.9);
+            position: relative;
+            display: inline-block;
+        }
+
+        .premium-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 8px;
+            height: 25px;
+            background: #ff0033;
+            border-radius: 50%;
+            animation: bloodDrip 1.5s infinite alternate;
+        }
+
+        @keyframes bloodDrip {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateY(10px); }
+        }
+
+        /* Premium Subscription Button */
+        .premium-button {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #6a0dad, #3a0ca3);
+            padding: 15px 35px;
+            border-radius: 8px;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+            position: relative;
+            overflow: hidden;
+            animation: glowPulse 1s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            from { box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); }
+            to { box-shadow: 0 0 30px rgba(138, 43, 226, 1); }
+        }
+
+        /* Button Click Effect */
+        .premium-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 40px rgba(255, 0, 50, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shooting Stars Effect -->
+    <div class="shooting-stars"></div>
+    <script>
+        function createShootingStars() {
+            const starContainer = document.querySelector(".shooting-stars");
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.animationDuration = Math.random() * 4 + 2 + "s";
+                starContainer.appendChild(star);
+            }
+        }
+        createShootingStars();
+    </script>
+
+    <!-- Premium Subscription Content -->
+    <div class="premium-container">
+        <h1 class="premium-title">02ReadNovel Premium Subscription</h1>
+        <p>Please use the email address you registered with when purchasing.</p>
+        <p>The premium subscription unlocks access to all premium chapters.</p>
+        <p>Subscriptions automatically renew every month.</p>
+        <p>Your subscription lasts for one month from the date of purchase. For example, if you subscribe on the 25th of the month, your renewal date will be the 25th of the following month.</p>
+        <p>After purchasing a premium membership, you can access all premium chapters of every book.</p>
+        <p>If the terms of service are violated, the premium membership will be canceled, and a refund will be issued.</p>
+        <p>If you have any questions regarding premium purchases or usage, please contact our customer support team through our official social media accounts.</p>
+        <p>By proceeding with the premium purchase, you agree to all terms and conditions of use.</p>
+        <p>For any returns or disputes, please contact me at: <strong>ismetemir4040@gmail.com</strong></p>
+
+        <a href="https://www.patreon.com/checkout/02ReadNovel?rid=25036997" class="premium-button">
+            Subscribe to Premium
+        </a>
+    </div>
+</body>
+</html>
